@@ -58,6 +58,7 @@ export class AppComponent {
       link: ''
     }
   ];
+  imageSlider = [];
 
   handleTabSelected(tabMenu: TopMenu) {
     console.log(tabMenu);
