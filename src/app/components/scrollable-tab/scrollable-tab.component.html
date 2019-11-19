@@ -1,5 +1,13 @@
 <ul>
 	<li *ngFor="let menu of menus; let i = index;">
-		<a href="#" [class.active]="i === selectedIndex" (click)="selectedIndex = i">{{menu.title}}</a>
+		<a href="#" 
+			[class.active]="i === selectedIndex"
+			(click)="handleSelection(i)">
+			{{menu.title}}
+		</a>
+		<span class="indicator" *ngIf="i === selectedIndex; else elseTemp"></span>
 	</li>
+	<ng-template #elseTemp>
+		<span>hello word</span>
+	</ng-template>
 </ul>
