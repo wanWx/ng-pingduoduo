@@ -46,7 +46,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     推荐使用Renderer2操作DOM元素
 ### 双向绑定
 ` <input [value]="username" (input)="username = $event.target.value" /> `
-    [value]="username" —— 绑定username值到input的value
+    `[value]="username"` —— 绑定username值到input的value
     (input)="表达式" —— 绑定表达式到input的input事件
-    username = $event.target.value —— 在input事件触发时执行
+    `username = $event.target.value` —— 在input事件触发时执行
     $event —— 表达式，提供事件的数据
+### @NgModule 注解
+- declarations 数组：模块拥有的组件、指令或管道。注意每个
+组件/指令/管道只能在一个模块中声明。
+- providers 数组：模块中需要使用的服务
+- exports 数组：暴露给其他模块使用的组件、指令或管道等。
+- imports 数组：导入本模块需要的依赖模块，注意是模块

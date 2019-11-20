@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TopMenu } from './components';
+import { TopMenu } from './shared/components';
 
 @Component({
   selector: 'app-root',
@@ -59,7 +59,6 @@ export class AppComponent {
     }
   ];
   imageSlider = [];
-  username = '';
   handleTabSelected(tabMenu: TopMenu) {
     console.log(tabMenu);
   }
