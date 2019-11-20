@@ -4,6 +4,10 @@
 	.image-slider {
 		display: flex;
 		overflow-x: scroll;
+		::-webkit-scrollbar {
+			display: none;
+			width: 0 !important;
+		}
 	}
 	img {
 		width: 100%;
@@ -29,6 +33,9 @@
 			border-radius: 50%;
 			text-decoration: none;
 			margin: 5px;
+		}
+		.slide-button-select {
+			background-color: #e02f29;
 		}
 	}
 }

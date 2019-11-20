@@ -59,7 +59,7 @@ export class AppComponent {
     }
   ];
   imageSlider = [];
-
+  username = '';
   handleTabSelected(tabMenu: TopMenu) {
     console.log(tabMenu);
   }

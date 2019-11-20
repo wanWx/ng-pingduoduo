@@ -44,3 +44,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     可以是Angular组件，也可以是HTML元素
     在AfterViewInit中可以安全的使用@ViewChild引用的元素
     推荐使用Renderer2操作DOM元素
+### 双向绑定
+` <input [value]="username" (input)="username = $event.target.value" /> `
+    [value]="username" —— 绑定username值到input的value
+    (input)="表达式" —— 绑定表达式到input的input事件
+    username = $event.target.value —— 在input事件触发时执行
+    $event —— 表达式，提供事件的数据
