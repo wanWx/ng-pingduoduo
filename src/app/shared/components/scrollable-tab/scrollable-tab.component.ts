@@ -5,6 +5,7 @@ import { Component,
   EventEmitter } from '@angular/core';
 
 export interface TopMenu {
+  id: number;
   title: string;
   link: string;
 }
