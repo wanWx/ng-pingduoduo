@@ -12,6 +12,8 @@ import { HomeContainerComponent, HomeDetailComponent, HomeGrandComponent } from 
     HomeDetailComponent,
     HomeGrandComponent
   ],
+  providers: [
+  ],
   imports: [
     SharedModule,
     HomeRoutingModule

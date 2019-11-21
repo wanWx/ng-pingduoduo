@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TopMenu } from 'src/app/shared/components';
+import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-home-container',
   templateUrl: './home-container.component.html',
@@ -7,12 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
   }
 
-  // handleTabSelected(topMenu: TopMenu) {
-  //   this.router.navigate(['home', topMenu.link]);
-  // }
+  handleTabSelected(topMenu: TopMenu) {
+    this.router.navigate(['home', topMenu.link]);
+  }
 }

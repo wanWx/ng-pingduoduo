@@ -1,4 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable, Injector } from '@angular/core';
+
+@Injectable()
+class Product {
+  constructor(private name: string) {
+
+  }
+}
+
+@Injectable()
+class PurchaseOrder {
+  private amount: number;
+  constructor(private product: Product) {  
+  }
+}
 
 @Component({
   selector: 'app-home-grand',

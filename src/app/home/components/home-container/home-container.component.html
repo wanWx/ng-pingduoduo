@@ -1,4 +1,10 @@
-<p>
-  home-container works!
-</p>
-<router-outlet></router-outlet>
+<app-scrollable-tab
+  [backgroundColor]="'#fff'"
+  [indicatorColor]="'red'"
+  [titleColor]="'#3f3f3f'"
+  (tabSelected)="handleTabSelected($event)"
+>
+</app-scrollable-tab>
+<div class="main">
+  <router-outlet></router-outlet>
+</div>

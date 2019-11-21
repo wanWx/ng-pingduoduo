@@ -9,6 +9,7 @@ import { HomeModule } from './home';
 
 import localZh from '@angular/common/locales/zh-Hans';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { registerLocaleData } from '@angular/common';
     AppRoutingModule,
     FormsModule,
     SharedModule,
+    HttpClientModule,
     HomeModule
   ],
   providers: [
