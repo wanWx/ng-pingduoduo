@@ -48,8 +48,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `<input [value]="username" (input)="username = $event.target.value" />`
 
 `[value]="username"` —— 绑定username值到input的value
+
 (input)="表达式" —— 绑定表达式到input的input事件
+
 `username = $event.target.value` —— 在input事件触发时执行
+
 $event —— 表达式，提供事件的数据
 ### @NgModule 注解
 - declarations 数组：模块拥有的组件、指令或管道。注意每个
