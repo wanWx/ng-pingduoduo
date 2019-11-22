@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { TopMenu, Channel, ImageSlider } from 'src/app/shared/components';
 
 /**
  * 如果采用 `providedIn` ，
@@ -16,12 +17,18 @@ import { environment } from 'src/environments/environment';
 export class HomeService {
   constructor(private http: HttpClient) {}
   getBanners() {
-     return this.http.get(`${environment.baseUrl}/banners`);
+     return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`, {
+      params: { icode: 'xxx' }
+     });
   }
   getChannels() {
-    return this.http.get(`${environment.baseUrl}/channels`);
+    return this.http.get<Channel[]>(`${environment.baseUrl}/channels`, {
+      params: { icode: 'xxx' }
+    });
   }
   getTabs() {
-    return this.http.get(`${environment.baseUrl}/tabs`);
+    return this.http.get<TopMenu[]>(`${environment.baseUrl}/tabs`, {
+      params: { icode: 'xxx' }
+    });
   }
 }

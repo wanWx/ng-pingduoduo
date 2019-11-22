@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeContainerComponent, HomeDetailComponent, HomeGrandComponent } from './components';
+import { HomeContainerComponent, HomeDetailComponent, HomeGrandComponent, ParentComponent } from './components';
 
 
 
@@ -10,7 +10,8 @@ import { HomeContainerComponent, HomeDetailComponent, HomeGrandComponent } from 
   declarations: [
     HomeContainerComponent,
     HomeDetailComponent,
-    HomeGrandComponent
+    HomeGrandComponent,
+    ParentComponent
   ],
   providers: [
   ],

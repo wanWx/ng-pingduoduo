@@ -25,7 +25,7 @@ export interface ImageSlider {
 })
 export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() sliders: ImageSlider[] = [];
-  @Input() sliderHeight = '160px';
+  @Input() sliderHeight = 'auto';
   @Input() intervalBySeconds = 2;
   @ViewChild('imageSlider', { static: true })
   imgSlider: ElementRef;

@@ -10,7 +10,7 @@ class Product {
 @Injectable()
 class PurchaseOrder {
   private amount: number;
-  constructor(private product: Product) {  
+  constructor(private product: Product) {
   }
 }
 
