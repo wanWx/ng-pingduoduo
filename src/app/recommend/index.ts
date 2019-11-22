@@ -1,3 +1,2 @@
-export * from './recommend.module';
 export * from './components';
-
+export * from './recommend.module';

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { TopMenu, Channel, ImageSlider } from 'src/app/shared/components';
+import { Ad } from 'src/app/shared/domain';
 
 /**
  * 如果采用 `providedIn` ，
@@ -29,6 +30,13 @@ export class HomeService {
   getTabs() {
     return this.http.get<TopMenu[]>(`${environment.baseUrl}/tabs`, {
       params: { icode: 'xxx' }
+    });
+  }
+  getAdByTab(tab: string) {
+    return this.http.get<Ad[]>(`${environment.baseUrl}/ads`, {
+      params: {
+        categories_like: tab
+      }
     });
   }
 }

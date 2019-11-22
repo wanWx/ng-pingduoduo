@@ -5,14 +5,13 @@ ul {
 	-webkit-overflow-scrolling: touch;
 	display: flex;
 	justify-content: space-between;
-	li {
+	.tab-item {
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		margin: 0 5px;
-		padding: 0;
-		white-space: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    padding: 5px 10px;
+    white-space: nowrap;
 	}
 }
 a {

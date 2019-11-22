@@ -2,7 +2,8 @@ import { Component,
   OnInit,
   Input,
   Output,
-  EventEmitter } from '@angular/core';
+  EventEmitter,
+  ChangeDetectionStrategy} from '@angular/core';
 
 export interface TopMenu {
   id: number;
@@ -13,14 +14,15 @@ export interface TopMenu {
 @Component({
   selector: 'app-scrollable-tab',
   templateUrl: './scrollable-tab.component.html',
-  styleUrls: ['./scrollable-tab.component.scss']
+  styleUrls: ['./scrollable-tab.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ScrollableTabComponent implements OnInit {
 
-  selectedIndex = -1;
+  @Input() selectedTabLink: string;
   @Input() menus: TopMenu[] = [];
   @Input() backgroundColor = '#fff';
-  @Input() titleactiveColor = 'yellow';
+  @Input() titleActiveColor = 'yellow';
   @Input() titleColor = 'blue';
   @Input() indicatorColor = 'brown';
 
@@ -32,8 +34,7 @@ export class ScrollableTabComponent implements OnInit {
   }
 
   handleSelection(index: number) {
-    this.selectedIndex = index;
-    this.tabSelected.emit(this.menus[this.selectedIndex]);
+    this.tabSelected.emit(this.menus[index]);
   }
 
 }
