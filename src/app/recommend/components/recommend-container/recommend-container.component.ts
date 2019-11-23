@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommend-container.component.scss']
 })
 export class RecommendContainerComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
