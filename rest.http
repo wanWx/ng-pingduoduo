@@ -45,3 +45,6 @@ GET {{baseUrl}}/api/ads?categories_like=hot HTTP/1.1
 
 ###
 GET {{baseUrl}}/api/products?categories_like=hot HTTP/1.1
+
+###
+GET {{baseUrl}}/api/productVariants?_expand=product&_embed=productVariantImages&productId=1 hTTP/1.1
