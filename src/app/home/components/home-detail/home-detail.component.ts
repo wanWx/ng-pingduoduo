@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { HomeService } from '../../services';
 import { ImageSlider, Channel } from 'src/app/shared/components';
 import { Observable, Subscription } from 'rxjs';
@@ -9,7 +9,8 @@ import { Ad, Product } from 'src/app/shared';
 @Component({
   selector: 'app-home-detail',
   templateUrl: './home-detail.component.html',
-  styleUrls: ['./home-detail.component.scss']
+  styleUrls: ['./home-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeDetailComponent implements OnInit, OnDestroy {
 

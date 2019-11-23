@@ -7,8 +7,14 @@ import { ScrollableTabComponent,
   CountDownComponent,
   FooterComponent,
   VerticalGridComponent,
-  ProductCardComponent} from './components';
-import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './directives';
+  ProductCardComponent,
+  ProductTileComponent,
+  BackButtonComponent} from './components';
+import { GridItemDirective,
+  GridItemImageDirective,
+  GridItemTitleDirective,
+  TagDirective,
+  AvatarDirective } from './directives';
 import { AgoPipe } from './pipes';
 
 
@@ -22,9 +28,13 @@ import { AgoPipe } from './pipes';
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
+    ProductTileComponent,
+    BackButtonComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
+    TagDirective,
+    AvatarDirective,
     AgoPipe
   ],
   imports: [
@@ -41,9 +51,13 @@ import { AgoPipe } from './pipes';
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
+    ProductTileComponent,
+    BackButtonComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
+    TagDirective,
+    AvatarDirective,
     AgoPipe
   ]
 })
