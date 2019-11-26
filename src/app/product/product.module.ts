@@ -5,7 +5,9 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductContainerComponent,
   GroupItemComponent,
   GroupShortListComponent,
-  ProductVariantDialogComponent } from './components';
+  ProductVariantDialogComponent,
+  ProductAmountComponent,
+  ConfirmOrderComponent} from './components';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { ProductContainerComponent,
     ProductContainerComponent,
     GroupItemComponent,
     GroupShortListComponent,
-    ProductVariantDialogComponent
+    ProductVariantDialogComponent,
+    ProductAmountComponent,
+    ConfirmOrderComponent
   ],
   imports: [
     SharedModule,

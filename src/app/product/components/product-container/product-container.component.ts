@@ -53,24 +53,24 @@ export class ProductContainerComponent implements OnInit, OnDestroy {
     const top = 40;
     // 传入 Output，EventEmitter 其实就是一个 Subject
     const formSubmitted = new EventEmitter();
-    // this.subs.push(
-    //   formSubmitted.subscribe(ev => {
-    //     this.router.navigate(['/orders', 'confirm']);
-    //   })
-    // );
-    // const selected = new EventEmitter<number>();
-    // this.subs.push(
-    //   selected.subscribe(idx => {
-    //     this.selectedIndex = idx;
-    //   })
-    // );
+    this.subs.push(
+      formSubmitted.subscribe(ev => {
+        this.router.navigate(['/orders', 'confirm']);
+      })
+    );
+    const selected = new EventEmitter<number>();
+    this.subs.push(
+      selected.subscribe(idx => {
+        this.selectedIndex = idx;
+      })
+    );
     this.dialogService.open(ProductVariantDialogComponent, {
       // 如果 key 和 value 是一个名字，直接写就可以
       inputs: {
         variants,
         selectedVariantIndex: this.selectedIndex
       },
-      outputs: { },
+      outputs: { formSubmitted, selected },
       position: {
         top: `${top}%`,
         left: '50%',

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductContainerComponent } from './components';
-
+import { ProductContainerComponent, ConfirmOrderComponent } from './components';
 
 const routes: Routes = [
   {
@@ -12,6 +11,10 @@ const routes: Routes = [
         component: ProductContainerComponent
       }
     ]
+  },
+  {
+    path: 'orders/confirm',
+    component: ConfirmOrderComponent
   }
 ];
 
@@ -19,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProductRoutingModule { }
+export class ProductRoutingModule {}
