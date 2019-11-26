@@ -16,6 +16,7 @@ import { GridItemDirective,
   TagDirective,
   AvatarDirective } from './directives';
 import { AgoPipe } from './pipes';
+import { DialogModule } from '../dialog';
 
 
 
@@ -44,6 +45,7 @@ import { AgoPipe } from './pipes';
   exports: [
     CommonModule,
     FormsModule,
+    DialogModule,
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,

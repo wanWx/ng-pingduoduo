@@ -10,6 +10,8 @@ import { Observable, Subscription } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { ProductVariant } from '../../domain';
 import { OrderService } from '../../services';
+import { DialogService } from 'src/app/dialog';
+import { ProductVariantDialogComponent } from '../product-variant-dialog';
 
 @Component({
   selector: 'app-product-container',
@@ -25,6 +27,7 @@ export class ProductContainerComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private orderService: OrderService,
+    private dialogService: DialogService
   ) {}
 
   ngOnInit() {
@@ -50,16 +53,30 @@ export class ProductContainerComponent implements OnInit, OnDestroy {
     const top = 40;
     // 传入 Output，EventEmitter 其实就是一个 Subject
     const formSubmitted = new EventEmitter();
-    this.subs.push(
-      formSubmitted.subscribe(ev => {
-        this.router.navigate(['/orders', 'confirm']);
-      })
-    );
-    const selected = new EventEmitter<number>();
-    this.subs.push(
-      selected.subscribe(idx => {
-        this.selectedIndex = idx;
-      })
-    );
+    // this.subs.push(
+    //   formSubmitted.subscribe(ev => {
+    //     this.router.navigate(['/orders', 'confirm']);
+    //   })
+    // );
+    // const selected = new EventEmitter<number>();
+    // this.subs.push(
+    //   selected.subscribe(idx => {
+    //     this.selectedIndex = idx;
+    //   })
+    // );
+    this.dialogService.open(ProductVariantDialogComponent, {
+      // 如果 key 和 value 是一个名字，直接写就可以
+      inputs: {
+        variants,
+        selectedVariantIndex: this.selectedIndex
+      },
+      outputs: { },
+      position: {
+        top: `${top}%`,
+        left: '50%',
+        width: '100%',
+        height: `${100 - top}%`
+      }
+    });
   }
 }

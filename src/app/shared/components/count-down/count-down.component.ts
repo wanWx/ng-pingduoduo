@@ -10,7 +10,7 @@ import { map, takeWhile, tap } from 'rxjs/operators';
 export class CountDownComponent implements OnInit {
 
   @Input() startDate = new Date();
-  @Input() funtureDate: Date;
+  @Input() futureDate: Date;
 
   private _MS_PER_SECOND = 1000;
 
@@ -19,14 +19,13 @@ export class CountDownComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.countDown$ = this.getCountDownObservable(this.startDate, this.funtureDate);
+    this.countDown$ = this.getCountDownObservable(this.startDate, this.futureDate);
   }
 
   private getCountDownObservable(startDate: Date, funtureDate: Date) {
     return interval(1000).pipe(
       map(elapse => this.diffInSec(startDate, funtureDate) - elapse),
       takeWhile(gap => gap >= 0),
-      tap(val => console.log(val)),
       map(sec => ({
         day: Math.floor(sec / 3600 / 24),
         hour: Math.floor((sec / 3600) % 24),
