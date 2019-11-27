@@ -1,21 +1,20 @@
-import { Injectable, Inject, Type } from '@angular/core';
-import { DomService, ChildConfig } from './dom.service';
+import { Injectable, Type, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
+import { DomService, ChildConfig } from './dom.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class DialogService {
-
-  private readonly dialogElementId = 'dialog-container';
-  private readonly overlayElementId = 'overlay';
-  private data$ = new BehaviorSubject<object | null>(null);
-
+  private dialogElementId = 'dialog-container';
+  private overlayElementId = 'overlay';
+  private data$: BehaviorSubject<object | null>;
   constructor(
     private domService: DomService,
     @Inject(DOCUMENT) private document: Document
-  ) { }
+  ) {
+    const initialData = localStorage.getItem('data');
+    this.data$ = new BehaviorSubject<object | null>(JSON.parse(initialData));
+  }
 
   open(component: Type<any>, config: ChildConfig) {
     this.domService.appendComponentTo(this.dialogElementId, component, config);
@@ -32,20 +31,22 @@ export class DialogService {
 
   close() {
     this.domService.removeComponent();
-    this.toggleAll()
+    this.toggleAll();
+  }
+
+  saveData(data: object | null) {
+    this.data$.next(data);
+    localStorage.setItem('data', JSON.stringify(data));
   }
 
   getData() {
+    console.log(this.data$);
     return this.data$.asObservable();
-  }
-
-  savaData(val: object | null) {
-    this.data$.next(val);
   }
 
   private toggleAll() {
     this.toggleVisibility(this.document.getElementById(this.dialogElementId));
-    this.toggleVisibility(this.document.getElementById(this.overlayElementId))
+    this.toggleVisibility(this.document.getElementById(this.overlayElementId));
   }
 
   private toggleVisibility(element: HTMLElement) {

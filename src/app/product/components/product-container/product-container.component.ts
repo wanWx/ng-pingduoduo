@@ -55,6 +55,7 @@ export class ProductContainerComponent implements OnInit, OnDestroy {
     const formSubmitted = new EventEmitter();
     this.subs.push(
       formSubmitted.subscribe(ev => {
+        this.dialogService.saveData(ev);
         this.router.navigate(['/orders', 'confirm']);
       })
     );

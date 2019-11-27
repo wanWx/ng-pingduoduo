@@ -1,11 +1,13 @@
-import { Injectable, 
+import {
+  Injectable,
   ComponentFactoryResolver,
   ApplicationRef,
   Injector,
-  Inject, 
-  Type,
   EmbeddedViewRef,
-  ComponentRef} from '@angular/core';
+  ComponentRef,
+  Type,
+  Inject
+} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 export interface DialogPos {
@@ -21,18 +23,15 @@ export interface ChildConfig {
   position?: DialogPos;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class DomService {
-
   private childComponentRef: ComponentRef<any>;
   constructor(
-    private resolver: ComponentFactoryResolver, // 得到组件工厂
+    private resolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
     private injector: Injector,
     @Inject(DOCUMENT) private document: Document
-  ) { }
+  ) {}
   /**
    * appendComponentTo
    */

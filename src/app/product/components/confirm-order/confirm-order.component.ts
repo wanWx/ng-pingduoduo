@@ -2,13 +2,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogService } from 'src/app/dialog';
 import { Observable, Subject, combineLatest, merge } from 'rxjs';
 import { map, tap, share } from 'rxjs/operators';
-import { ProductVariant } from '../../domain';
-import { Payment } from '../payment';
+import { ProductVariant, Payment } from '../../domain';
 
 @Component({
   selector: 'app-confirm-order',
   templateUrl: './confirm-order.component.html',
-  styleUrls: ['./confirm-order.component.css'],
+  styleUrls: ['./confirm-order.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConfirmOrderComponent implements OnInit {

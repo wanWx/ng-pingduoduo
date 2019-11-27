@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DialogComponent } from './components';
+import { CloseDialogDirective } from './directives';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [DialogComponent],
+  declarations: [DialogComponent, CloseDialogDirective],
   exports: [
-    DialogComponent
+    DialogComponent,
+    CloseDialogDirective
   ]
 })
 export class DialogModule { }
